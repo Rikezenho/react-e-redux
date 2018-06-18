@@ -1,7 +1,10 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import Componente from './component'
+import Primeiro, { Segundo } from './component'
 
 ReactDOM.render(
-  <Componente value='Show!'/>
+  <div>
+    <Primeiro value='componente!'/>
+    <Segundo value='componente!'/>
+  </div>
 , document.getElementById('app'))
