@@ -36,7 +36,7 @@ export default class Todo extends Component {
     handleSearch() {
         this.refresh(this.state.description)
     }
-    
+
     handleChange(e) {
         this.setState({ ...this.state, description: e.target.value })
     }
@@ -74,10 +74,8 @@ export default class Todo extends Component {
                     handleAdd={this.handleAdd}
                     handleChange={this.handleChange}
                     handleSearch={this.handleSearch}
-                    handleClear={this.handleClear}
-                    description={this.state.description} />
+                    handleClear={this.handleClear} />
                 <TodoList
-                    list={this.state.list}
                     handleRemove={this.handleRemove}
                     handleMarkAsDone={this.handleMarkAsDone}
                     handleMarkAsPending={this.handleMarkAsPending} />
