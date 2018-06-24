@@ -14,3 +14,27 @@ export const search = () => {
     payload: request
   }
 }
+
+export const add = description => {
+  return dispatch => {
+    axios.post(URL, { description })
+      .then(resp => dispatch({ type: 'TODO_ADDED', payload: resp.data }))
+      .then(resp => dispatch(search()))
+  }
+}
+
+export const markAsDone = todo => {
+  return dispatch => {
+    axios.put(`${URL}/${todo._id}`, { ...todo, done: true })
+      .then(resp => dispatch({ type: 'TODO_MARKED_AS_DONE', payload: resp.data }))
+      .then(resp => dispatch(search()))
+  }
+}
+
+export const markAsPending = todo => {
+  return dispatch => {
+    axios.put(`${URL}/${todo._id}`, { ...todo, done: false })
+      .then(resp => dispatch({ type: 'TODO_MARKED_AS_PENDING', payload: resp.data }))
+      .then(resp => dispatch(search()))
+  }
+}
