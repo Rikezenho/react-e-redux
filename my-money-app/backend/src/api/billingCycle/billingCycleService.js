@@ -1,9 +1,19 @@
-const BillingCycle = require('./billingCycle')
+const BillingCycle = require("./billingCycle");
 
-BillingCycle.methods(['get', 'post', 'put', 'delete'])
+BillingCycle.methods(["get", "post", "put", "delete"]);
 BillingCycle.updateOptions({
-    new: true,
-    runValidators: true
-})
+  new: true,
+  runValidators: true
+});
 
-module.exports = BillingCycle
+BillingCycle.route("count", (req, res, next) => {
+  BillingCycle.count((err, value) => {
+    if (err) {
+      res.status(500).json({ errors: [error] });
+    } else {
+      res.json({ value });
+    }
+  });
+});
+
+module.exports = BillingCycle;
