@@ -22,7 +22,7 @@ class TabHeader extends Component {
   }
 }
 
-const mapStateToProps = state => ({ tab: state.tab }, state);
+const mapStateToProps = state => ({ tab: state.tab });
 const mapDispatchToProps = dispatch =>
   bindActionCreators({ selectTab }, dispatch);
 
