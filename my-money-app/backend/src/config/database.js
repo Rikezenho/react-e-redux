@@ -1,6 +1,9 @@
 const mongoose = require("mongoose");
 mongoose.Promise = global.Promise;
 
+const localUrl =
+  "mongodb://mymoneyapp:study102030@localhost:27017/my-money-app";
+
 module.exports = mongoose.connect(
   "mongodb://mymoneyapp:study102030@ds018268.mlab.com:18268/my-money-app"
 );
