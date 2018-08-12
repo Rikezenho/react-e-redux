@@ -8,10 +8,21 @@ import { bindActionCreators } from "redux";
 import { init } from "./billingCycleActions";
 
 import ItemList from "./itemList";
+import Summary from "./summary";
 
 class BillingCycleForm extends Component {
+  calculateSummary() {
+    const sum = (total, currentValue) => total + currentValue;
+    return {
+      sumOfCredits: this.props.credits
+        .map(credit => +credit.value || 0)
+        .reduce(sum),
+      sumOfDebts: this.props.debts.map(debt => +debt.value || 0).reduce(sum)
+    };
+  }
   render() {
     const { handleSubmit, readOnly, credits, debts } = this.props;
+    const { sumOfCredits, sumOfDebts } = this.calculateSummary();
     return (
       <form action="" role="form" onSubmit={handleSubmit}>
         <div className="box-body">
@@ -41,6 +52,7 @@ class BillingCycleForm extends Component {
             type="number"
             readOnly={readOnly}
           />
+          <Summary credit={sumOfCredits} debt={sumOfDebts} />
           <ItemList
             cols="12 6"
             readOnly={readOnly}

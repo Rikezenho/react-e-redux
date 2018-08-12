@@ -39,7 +39,7 @@ class Dashboard extends Component {
               cols="12 4"
               color="blue"
               icon="money"
-              value={`R$ ${credit - debt}`}
+              value={`R$ ${(credit - debt).toFixed(2)}`}
               text="Valor Consolidado"
             />
           </Row>
