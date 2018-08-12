@@ -6,7 +6,8 @@ import { selectTab, showTabs } from "../common/tab/tabActions";
 
 const BASE_URL = `http://localhost:3003/api/billingCycles`;
 const INITIAL_VALUES = {
-  credits: [{}]
+  credits: [{}],
+  debts: [{}]
 };
 
 export function getList() {
