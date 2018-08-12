@@ -6,7 +6,7 @@ BillingCycle.updateOptions({
   new: true,
   runValidators: true
 });
-BillingCycle.after("post", errorHandler).after("post", errorHandler);
+BillingCycle.after("post", errorHandler).after("put", errorHandler);
 
 BillingCycle.route("count", (req, res, next) => {
   BillingCycle.count((err, value) => {
