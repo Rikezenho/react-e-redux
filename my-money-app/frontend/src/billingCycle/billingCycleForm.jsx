@@ -54,6 +54,7 @@ class BillingCycleForm extends Component {
             list={debts}
             field="debts"
             legend="Débitos"
+            showStatus={true}
           />
         </div>
         <div className="box-footer">
