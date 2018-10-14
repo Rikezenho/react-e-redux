@@ -1,5 +1,5 @@
 import React from "react";
 import { render } from "react-dom";
-import Primeiro from "./components/primeiro";
+import BomDia from "./components/bomdia";
 
-render(<Primeiro />, document.getElementById("root"));
+render(<BomDia nome="João" />, document.getElementById("root"));
