@@ -1,5 +1,8 @@
 import React from "react";
 import { render } from "react-dom";
-import BomDia from "./components/bomdia";
+import Saudacao from "./components/saudacao";
 
-render(<BomDia nome="João" />, document.getElementById("root"));
+render(
+  <Saudacao tipo="Bom dia" nome="João" />,
+  document.getElementById("root")
+);
